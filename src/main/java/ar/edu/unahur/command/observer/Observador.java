@@ -1,7 +1,7 @@
 package ar.edu.unahur.command.observer;
 
-import ar.edu.unahur.command.Jugador;
+import ar.edu.unahur.command.EstadoANotificar;
 
 public interface Observador {
-    void actualizar(Jugador jugador);
+    void actualizar(EstadoANotificar estadoANotificar);
 }

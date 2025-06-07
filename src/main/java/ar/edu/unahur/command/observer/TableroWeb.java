@@ -1,6 +1,7 @@
 package ar.edu.unahur.command.observer;
 
-import ar.edu.unahur.command.Jugador;
+import ar.edu.unahur.command.EstadoANotificar;
+
 import ar.edu.unahur.command.Sender;
 
 public class TableroWeb implements Observador {
@@ -12,14 +13,15 @@ public class TableroWeb implements Observador {
     }
 
     @Override
-    public void actualizar(Jugador jugador) {
+    public void actualizar(EstadoANotificar estadoANotificar) {
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
 
             e.printStackTrace();
         }
-        sender.enviarMovimiento(jugador.getPosX(), jugador.getPosY(), jugador.getCantMovimientos());
+        sender.enviarMovimiento(estadoANotificar.getPosX(), estadoANotificar.getPoxY(),
+                estadoANotificar.getCantMovims());
     }
 
 }

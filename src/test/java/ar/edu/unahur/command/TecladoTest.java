@@ -1,6 +1,7 @@
 package ar.edu.unahur.command;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,6 +37,13 @@ public class TecladoTest {
         teclado.mover('s');
         assertEquals(3, jugador.getPosX());
         assertEquals(1, jugador.getCantMovimientos());
+    }
+
+    @Test
+    void alPresionarUnaTeclaIncorrecta_SeLanzaUnaExcepcion() {
+        assertThrows(TeclaNoValidadException.class, () -> {
+            teclado.mover('y');
+        }, "la tecla y no es válida");
     }
 
 }

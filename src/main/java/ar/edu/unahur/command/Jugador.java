@@ -81,7 +81,7 @@ public class Jugador implements Observable {
 
     @Override
     public void notificar() {
-        observadores.forEach(o -> o.actualizar(this));
+        observadores.forEach(o -> o.actualizar(new EstadoANotificar(this.posX, this.posY, this.cantMovimientos)));
     }
 
 }

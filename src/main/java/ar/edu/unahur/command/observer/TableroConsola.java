@@ -1,6 +1,6 @@
 package ar.edu.unahur.command.observer;
 
-import ar.edu.unahur.command.Jugador;
+import ar.edu.unahur.command.EstadoANotificar;
 
 public class TableroConsola implements Observador {
 
@@ -51,8 +51,9 @@ public class TableroConsola implements Observador {
     }
 
     @Override
-    public void actualizar(Jugador jugador) {
-        dibujar(jugador.getPosX(), jugador.getPosY(), jugador.getCantMovimientos());
+    public void actualizar(EstadoANotificar estadoANotificar) {
+        dibujar(estadoANotificar.getPosX(), estadoANotificar.getPoxY(), estadoANotificar.getCantMovims());
+
     }
 
 }
